@@ -1,0 +1,116 @@
+.main-footer {
+    color: #fff;
+    a {
+        color: #fff;
+    }
+    .footer-top {
+        background-color: transparentize(#333, .6);
+        padding: 24px 0;
+        margin-top: 20px;
+        h3 {
+            text-transform: uppercase;
+            font-size: 40px;
+            margin-bottom: 11px;
+        }
+        .location {
+            color: $footer-color;
+            a {
+                color:  $footer-color-link;
+            }
+            margin-bottom: 8px;
+        }
+        p {
+            margin-bottom: 0;
+            a {
+                margin-bottom: 10px;
+                display: inline-block;
+            }
+        }
+        .privacy {
+            padding-left: 15px;
+            text-align: left;
+            margin-bottom: 0;
+            li {
+                padding-bottom: 0;
+                display: inline-block;
+                text-align: center;
+                text-decoration: none;
+                padding-right: 10px;
+                a {
+                    color: transparentize(#333, .5);
+                }
+            }
+        }
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 64px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+          }
+          
+          #myBtn:hover {
+            background-color: #555;
+          }
+    }
+    .footer-bottom {
+        padding: 15px 0;
+        .social {
+            .social-links {
+                display: flex;
+                justify-content: space-between;
+                
+            }
+            a {
+                color: transparentize(#333, .5);
+                display: flex;
+                width: 35px;
+                height: 35px;
+                border: 1px solid transparentize(#333, .5);
+                border-radius: 50%;
+                background-color: transparent;
+                transition: background-color 0.3s;
+            }
+            a:hover {
+                background: transparentize(#333, .5);
+            }
+            a i {
+                margin: auto;
+                transform: rotate(0deg);
+                transition: transform 0.3s;
+            }
+            a:hover i {
+                color: #fff;
+                transform: rotateY(360deg);
+            } 
+        }
+          
+    }
+@media (min-width: 768px) {
+    .main-footer {
+        .footer-top {
+            ul {
+                padding: 0;
+                list-style: none;
+            }
+            margin-top: 30px;
+            h4 {
+                margin: 25px 0;
+                text-transform: uppercase;
+                font-size: 18px;
+            }
+            li {
+                margin-bottom: 7px;
+                margin-right: 15px;
+            }
+        }
+    }
+}

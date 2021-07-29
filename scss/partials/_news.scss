@@ -1,0 +1,222 @@
+#teslaNews {
+    .btn {
+        display: inline-block;
+        padding: 0 30px;
+        height: 46px;
+        line-height: 46px;
+        border: 1px solid transparentize(#000, .8);
+        border-radius: 23px;
+        font-size: 15px;
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+      }
+      .btn span {
+        position: relative;
+        z-index: 2;
+      }
+      .btn-primary {
+        color: #000;
+        background-color: transparentize(#000, .8);
+      }
+      .btn span i {
+        margin-right: 10px;
+      }
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        height: calc(100% + 3px);
+        width: 120%;
+        transform: skew(-25deg);
+        z-index: 1;
+        left: -130%;
+        top: -1px;
+        background: transparentize(#000, .7);
+        transition: left 0.3s;
+      }
+      .btn-primary:hover::before {
+        left: -10%;
+      }
+    .title {
+        p {
+            margin: 0;
+            height: 47px;
+            &::after {
+                content: "";
+                width: 95px;
+                height: 5px;
+                display: block;
+                background-image: url("../img/decoration-line.png");
+                text-align: center;
+                margin: -100px auto 0;
+            }
+        }
+    .news-categories {
+        z-index: 15;
+        position: relative;
+        bottom: 87px;
+        list-style: none;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 30px;
+        text-align: center;
+        li {
+            font-size: 14px;
+            display: inline-block;
+            margin-right: 30px;
+            text-transform: uppercase;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                color: white;
+                padding-top: 3px;
+                display: block;
+                border-top: 2px solid transparent;
+                transition: all 0.3s;
+                &:hover {
+                    border-top-color: $nav-active2;
+                }
+                &.active {
+                    a {
+                        border-top-color: $nav-active2;
+                        color: $nav-active2;
+                    }
+            }
+            }
+        }
+        
+    }
+    .teslah2 {
+        top: -180px;
+        position: relative;
+        text-align: center;
+        display: block;
+        font-size: 32px;
+        z-index: 2;
+        color: white;
+        span {
+            text-transform: uppercase;
+            font-style: italic;
+        }
+    }
+}
+    figure {
+        position: relative;
+        transform: rotateY(0deg);
+        transition: transform 0.6s;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        .img-content {
+            position: relative;
+            backface-visibility: hidden;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            img {
+                margin: 0;
+            }
+        }
+    }
+    .gallery-grid-container {
+        perspective: 1000px;
+        display: grid;
+        grid-auto-rows: 270px;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        gap: 10px;
+        .scene {
+            .newbadge {
+                position: absolute;
+                top: -9px;
+                right: -65px;
+                z-index: 55;
+                width: 180px;
+                height: 69px;
+                padding-top: 35px;
+                backface-visibility: hidden;
+                transform: rotateZ(45deg);
+                text-transform: uppercase;
+                font-family: 'Istok Web', sans-serif;
+                font-size: 24px;
+                border-radius: 250px;
+                background-color: transparentize($link-color, .4);
+            }
+            margin-bottom: 15px;
+            overflow: hidden;
+            border-radius: 20px;
+            perspective: 1000px;          
+            .gallery-grid-item { 
+                figcaption {
+                    .newbadgebck {
+                        color: transparentize(#000, .4);
+                        background-color: transparentize(#000, .8);
+                    }
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 1;
+                    backface-visibility: hidden;
+                    transform: rotateY(180deg);
+                    color: transparentize(#000, .4);
+                    background-color: transparentize(#333, .8);
+                    ul {
+                        list-style: none;
+                        li {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                h2 {
+                    position: absolute;
+                    bottom: 4px;
+                    left: 20px;
+                    color: $hover-white;
+                    font-size: 18px;
+                }
+            }
+            &:hover .gallery-grid-item {
+                transform: rotateY(180deg);
+            }
+            &:first-of-type {
+                grid-column-end: span 2;
+                grid-row-end: span 2;
+            }
+            &:nth-child(4) {
+                grid-column-end: span 2;
+            }
+            &:nth-child(5) {
+                grid-column-end: span 2;
+            }
+            &:nth-child(6) {
+                grid-column-end: span 2;
+                grid-row-end: span 2;
+            }
+        }
+    }
+}
+@media (max-width: 425px) {
+    #teslaNews {
+        .gallery-grid-container {
+            display: block;
+        }
+    }
+}
+@media (min-width: 768px) {
+    #teslaNews {
+        .gallery-grid-container {
+            .scene {
+                margin: 0;
+            }
+        }
+    }   
+}

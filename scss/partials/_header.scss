@@ -1,0 +1,191 @@
+.main-header {
+    .top-bar {
+        padding: 10px 0;
+        a {
+            font-size: 14px;
+            color: $main-color;
+            &:hover {
+                color: $link-hover;
+            }
+            text-transform: uppercase;
+        }
+        .log-in {
+            float: left;
+        }
+        .sing-up {
+            float: right;
+        }
+    }
+    .navbar {
+        background-color: #fff;
+        margin-bottom: 0;
+        border: none;
+        .navbar-toggle {
+            float: left;
+            padding: 0;
+            margin: 0;
+            margin-top: 13px;
+            margin-left: 15px;
+            margin-right: 15px;
+            border: none;
+            .icon-bar {
+                width: 30px;
+                height: 4px;
+                @include border-radius(2px);
+                background-color: #000;
+                & + .icon-bar {
+                    margin-top: 7px;
+                }
+            }
+        }
+        > .container {
+            position: relative;
+        }
+    }
+    .logo {
+        margin-top: 10px;
+        margin-bottom: 15px;
+        float: left;
+    }
+    .search-cart-holder {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        .search {
+            display: inline-block;
+            position: relative;
+            top: 4px;
+            .form-control {
+                display: block;
+                width: 140px;
+                height: 24px;
+                border: none;
+                border-bottom: 1px solid #ccc;
+                @include border-radius(0);
+                box-shadow: none;
+                padding-right: 20px;
+                padding-top: 3px;
+                padding-left: 4px;
+                &:focus {
+                    border-bottom-color: $link-hover;
+                }
+            }
+            .btn {
+                position: absolute;
+                top: 2px;
+                right: 2px;
+                background-image: url("../img/search-icon.png");
+                background-repeat: no-repeat;
+                display: block;
+                width: 17px;
+                height: 18px;
+                padding: 0;
+                border: none;
+                background-color: transparent;
+                &:focus {
+                    outline: none;
+                }
+                &:active {
+                    box-shadow: none;
+                }
+            }
+        }
+        z-index: 2;
+    }
+    .nav {
+        padding-bottom: 5px;
+        li {
+            text-align: center;
+            a {
+                margin-top: 5px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 5px;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                text-transform: uppercase;
+                display: inline-block;
+                transition: all 0.4s;
+                border-left-color: white;
+                border-right-color: white;
+                &:hover {
+                    background-color: $bkg-color;
+                    border-left-color: $bkg-color;
+                    border-right-color: $bkg-color;
+                    border-width: 10px;
+                    border-radius: 10px;
+                }
+                &:focus {
+                    transition: all 0.2s;
+                    background-color: $bkg-color;
+                    border-left-color: $bkg-color;
+                    border-right-color:  $bkg-color;
+                    border-width: 35px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    .main-header {
+        .top-bar {
+            a {
+                font-size: 16px;
+            }
+        }
+        .logo {
+            margin-top: 4px;
+        }
+        .nav {
+            padding-bottom: 0;
+            li {
+                &:not(:last-child) {
+                    margin-right: 15px;
+                    border: none;
+                } 
+                a {
+                    border-width: 0;
+                    &:hover {
+                        border-width: 0px;
+                        border-radius: 5px;
+                    }
+                    &:focus {
+                        border-width: 0px;
+                        border-radius: 10px;
+                    }    
+                }
+            }
+        }
+        .navbar {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            @include border-radius(0);
+        }
+        .search-cart-holder {
+            top: -27px;
+        }
+    }
+}
+@media (min-width: 992px) {
+    .main-header {
+        .nav {
+            padding-right: 190px;
+            li {
+                &:last-child {
+                    margin-right: 30px;
+                }
+            }
+        }
+        .search-cart-holder {
+            top: 10px;
+        }
+    }
+}
+@media (min-width: 1200px) {
+    .main-header {
+        .logo {
+            width: 104px;
+        }
+    }
+}
